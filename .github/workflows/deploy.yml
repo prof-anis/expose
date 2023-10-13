@@ -27,4 +27,4 @@ jobs:
       - name: Deploy to Prod
         env:
           DOT_ENV: ${{ secrets.PRODUCTION_DOT_ENV }}
-        run: dep deploy amatnow.com --tag=${{ env.GITHUB_REF }} -vvv
+        run: dep deploy tobexkee.com --tag=${{ env.GITHUB_REF }} -vvv
