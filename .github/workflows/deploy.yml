@@ -1,0 +1,32 @@
+
+on:
+  push:
+    branches:
+      - master
+      - staging
+
+name: 🚀 Deploy website on push
+jobs:
+  deploy:
+    name: 🎉 Deploy To Production and Staging Server
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2.3.2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@master
+        with:
+          php-version: 8.1
+          extension-csv: mbstring, bcmath
+      - name: Copy .env
+        run: cp .env.example .env
+      - name: Setup Deployer
+        uses: atymic/deployer-php-action@master
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY }}
+          ssh-known-hosts: ${{ secrets.SSH_KNOW_HOSTS }}
+      - name: Deploy to Prod
+        env:
+          DOT_ENV: ${{ secrets.PRODUCTION_DOT_ENV }}
+        run: dep deploy amatnow.com --tag=${{ env.GITHUB_REF }} -vvv
