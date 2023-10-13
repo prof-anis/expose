@@ -63,6 +63,7 @@ host('tobexkee.com')
  */
 desc('Deploys your project');
 task('deploy', [
+    'deploy:setup',
     'deploy:info',
     'deploy:lock',
     'deploy:release',
