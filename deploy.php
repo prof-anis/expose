@@ -66,8 +66,8 @@ task('deploy', [
     'deploy:info',
     'deploy:lock',
     'deploy:release',
-    'rsync', // Deploy code & built assets
-    'deploy:secrets', // Deploy secrets
+    'rsync',
+    'deploy:secrets',
     'deploy:shared',
     'deploy:vendors',
     'deploy:writable',
