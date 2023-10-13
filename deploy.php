@@ -40,7 +40,7 @@ add('rsync', [
 
 host('tobexkee.com') // Name of the server
 ->setHostname('18.223.113.114') // Hostname or IP address
-->setRemoteUser('forge') // SSH user
+->setRemoteUser('ubuntu') // SSH user
 //->stage('production') // Deployment stage (production, staging, etc)
 ->setDeployPath('/home/ubuntu/expose');
 
