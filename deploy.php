@@ -76,6 +76,8 @@ task('deploy', [
     'deploy:cleanup',
 ]);
 
+
+
 $deployNginxFiles = function (): void {
     foreach (DEPLOY_DOMAINS as $localDomain => $DOMAIN) {
         $linkPath = "/etc/nginx/sites-enabled/$DOMAIN";
