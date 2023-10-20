@@ -14,7 +14,7 @@ return [
     */
     'servers' => [
         'main' => [
-            'host' => 'sharedwithexpose.com',
+            'host' => 'tobexkee.com',
             'port' => 443,
         ],
     ],
